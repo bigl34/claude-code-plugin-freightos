@@ -1,0 +1,7 @@
+{
+  "freightos": {
+    "quoteApiUrl": "https://ship.freightos.com/api/shippingCalculator",
+    "webAppUrl": "https://ship.freightos.com",
+    "shipmentsUrl": "https://ship.freightos.com/shipments"
+  }
+}

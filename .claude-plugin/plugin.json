@@ -1,0 +1,5 @@
+{
+  "name": "freightos-shipment-manager",
+  "version": "1.0.11",
+  "description": "Freightos freight quotes (API) and booking/tracking (browser automation)"
+}
