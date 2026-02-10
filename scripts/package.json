@@ -1,0 +1,18 @@
+{
+  "name": "freightos-shipment-manager-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "cli": "tsx cli.ts",
+    "build": "tsc",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "@local/cli-utils": "github:YOUR_GITHUB_USER/claude-code-plugin-shared"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
