@@ -3,7 +3,7 @@
 
 Freightos freight quotes (API) and booking/tracking (browser automation)
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue) ![License: MIT](https://img.shields.io/badge/License-MIT-green) ![Node >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
+![Version](https://img.shields.io/badge/version-1.1.1-blue) ![License: MIT](https://img.shields.io/badge/License-MIT-green) ![Node >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
 
 ## Features
 
@@ -21,7 +21,7 @@ Freightos freight quotes (API) and booking/tracking (browser automation)
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USER/claude-code-plugin-freightos.git
+git clone https://github.com/bigl34/claude-code-plugin-freightos.git
 cd claude-code-plugin-freightos
 cp config.template.json config.json  # fill in your credentials
 cd scripts && npm install
@@ -52,22 +52,22 @@ node scripts/dist/cli.js get-quote
 ## Usage Examples
 
 ```bash
-# FCL 40HC container quote: Ningbo to Southampton
+# FCL 40HC container quote: origin to destination
 npx tsx $HOME/node scripts/dist/cli.js \
-  get-quote --origin CNNGB --destination GBSOU --loadtype container40HC --weight 15000
+  get-quote --origin ORIGIN_PORT --destination DEST_PORT --loadtype container40HC --weight 15000
 
 # LCL pallets quote with dimensions
 npx tsx $HOME/node scripts/dist/cli.js \
-  get-quote --origin CNNGB --destination GBSOU --loadtype pallets \
+  get-quote --origin ORIGIN_PORT --destination DEST_PORT --loadtype pallets \
   --weight 500 --width 120 --length 100 --height 180 --quantity 6
 
 # Compare all shipping modes
 npx tsx $HOME/node scripts/dist/cli.js \
-  compare-rates --origin CNNGB --destination GBSOU --loadtype pallets --weight 2000
+  compare-rates --origin ORIGIN_PORT --destination DEST_PORT --loadtype pallets --weight 2000
 
 # Quick air freight estimate
 npx tsx $HOME/node scripts/dist/cli.js \
-  get-estimate --origin CNSHA --destination LHR --loadtype boxes --weight 150 --mode air
+  get-estimate --origin ORIGIN_PORT2 --destination DEST_PORT2 --loadtype boxes --weight 150 --mode air
 ```
 
 ## How It Works

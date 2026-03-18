@@ -27,15 +27,6 @@ Use the CLI at: `$HOME/.claude/plugins/local-marketplace/freightos-shipment-mana
 | `compare-rates` | Compare rates across all shipping modes (air, LCL, FCL, express) |
 | `list-tools` | Show all available CLI commands |
 
-### Port Codes Reference
-
-| Location | Code |
-|----------|------|
-| Ningbo, China | CNNGB |
-| Shanghai, China | CNSHA |
-| Shenzhen, China | CNSZX |
-| Southampton, UK | GBSOU |
-| Felixstowe, UK | GBFXT |
 
 ### Load Types
 
@@ -43,7 +34,7 @@ Use the CLI at: `$HOME/.claude/plugins/local-marketplace/freightos-shipment-mana
 |------|-------------|
 | `container20` | 20ft standard container |
 | `container40` | 40ft standard container |
-| `container40HC` | 40ft high cube container (most common for widgets) |
+| `container40HC` | 40ft high cube container (most common for bulky goods) |
 | `container45HC` | 45ft high cube container |
 | `pallets` | Palletized cargo (LCL) |
 | `boxes` | Boxed cargo |
@@ -54,22 +45,22 @@ Use the CLI at: `$HOME/.claude/plugins/local-marketplace/freightos-shipment-mana
 **Note:** Use `npx tsx` instead of `node` for proper ES module execution.
 
 ```bash
-# FCL 40HC container quote: Ningbo to Southampton
+# FCL 40HC container quote: origin to destination
 npx tsx $HOME/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
-  get-quote --origin CNNGB --destination GBSOU --loadtype container40HC --weight 15000
+  get-quote --origin ORIGIN_PORT --destination DEST_PORT --loadtype container40HC --weight 15000
 
 # LCL pallets quote with dimensions
 npx tsx $HOME/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
-  get-quote --origin CNNGB --destination GBSOU --loadtype pallets \
+  get-quote --origin ORIGIN_PORT --destination DEST_PORT --loadtype pallets \
   --weight 500 --width 120 --length 100 --height 180 --quantity 6
 
 # Compare all shipping modes
 npx tsx $HOME/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
-  compare-rates --origin CNNGB --destination GBSOU --loadtype pallets --weight 2000
+  compare-rates --origin ORIGIN_PORT --destination DEST_PORT --loadtype pallets --weight 2000
 
 # Quick air freight estimate
 npx tsx $HOME/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
-  get-estimate --origin CNSHA --destination LHR --loadtype boxes --weight 150 --mode air
+  get-estimate --origin ORIGIN_PORT2 --destination DEST_PORT2 --loadtype boxes --weight 150 --mode air
 ```
 
 ## Booking & Tracking (Browser Automation)
