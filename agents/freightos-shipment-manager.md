@@ -1,7 +1,7 @@
 ---
 name: freightos-shipment-manager
 description: Use this agent for Freightos freight operations - quotes via API, booking/tracking via browser automation
-model: opus
+model: claude-opus-4-6
 color: blue
 ---
 
@@ -16,7 +16,7 @@ Handle all freight shipping operations:
 
 ## Quote Operations (Direct API)
 
-Use the CLI at: `/Users/USER/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js`
+Use the CLI at: `$HOME/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js`
 
 ### Available Commands
 
@@ -55,20 +55,20 @@ Use the CLI at: `/Users/USER/.claude/plugins/local-marketplace/freightos-shipmen
 
 ```bash
 # FCL 40HC container quote: Ningbo to Southampton
-npx tsx /Users/USER/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
+npx tsx $HOME/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
   get-quote --origin CNNGB --destination GBSOU --loadtype container40HC --weight 15000
 
 # LCL pallets quote with dimensions
-npx tsx /Users/USER/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
+npx tsx $HOME/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
   get-quote --origin CNNGB --destination GBSOU --loadtype pallets \
   --weight 500 --width 120 --length 100 --height 180 --quantity 6
 
 # Compare all shipping modes
-npx tsx /Users/USER/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
+npx tsx $HOME/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
   compare-rates --origin CNNGB --destination GBSOU --loadtype pallets --weight 2000
 
 # Quick air freight estimate
-npx tsx /Users/USER/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
+npx tsx $HOME/.claude/plugins/local-marketplace/freightos-shipment-manager/scripts/dist/cli.js \
   get-estimate --origin CNSHA --destination LHR --loadtype boxes --weight 150 --mode air
 ```
 
@@ -156,6 +156,6 @@ When presenting quotes, format clearly:
 - **Inventory receiving**: Suggest inflow-inventory-manager
 
 ## Self-Documentation
-Log API quirks/errors to: `/Users/USER/biz/plugin-learnings/freightos-shipment-manager.md`
+Log API quirks/errors to: `$HOME/biz/plugin-learnings/freightos-shipment-manager.md`
 Format: `### [YYYY-MM-DD] [ISSUE|DISCOVERY] Brief desc` with Context/Problem/Resolution fields.
 Full workflow: `~/biz/docs/reference/agent-shared-context.md`

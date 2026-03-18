@@ -3,7 +3,7 @@
 
 Freightos freight quotes (API) and booking/tracking (browser automation)
 
-![Version](https://img.shields.io/badge/version-1.0.12-blue) ![License: MIT](https://img.shields.io/badge/License-MIT-green) ![Node >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
+![Version](https://img.shields.io/badge/version-1.1.0-blue) ![License: MIT](https://img.shields.io/badge/License-MIT-green) ![Node >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
 
 ## Features
 
@@ -40,14 +40,6 @@ node scripts/dist/cli.js get-quote
    cd scripts && npm install
    ```
 
-## Configuration
-
-Copy `config.template.json` to `config.json` and fill in the required values:
-
-| Field | Placeholder |
-|-------|-------------|
-| `credentials_path` | `/path/to/your/credentials` |
-
 ## Available Commands
 
 | Command         | Description                                                      |
@@ -61,20 +53,20 @@ Copy `config.template.json` to `config.json` and fill in the required values:
 
 ```bash
 # FCL 40HC container quote: Ningbo to Southampton
-npx tsx /Users/USER/node scripts/dist/cli.js \
+npx tsx $HOME/node scripts/dist/cli.js \
   get-quote --origin CNNGB --destination GBSOU --loadtype container40HC --weight 15000
 
 # LCL pallets quote with dimensions
-npx tsx /Users/USER/node scripts/dist/cli.js \
+npx tsx $HOME/node scripts/dist/cli.js \
   get-quote --origin CNNGB --destination GBSOU --loadtype pallets \
   --weight 500 --width 120 --length 100 --height 180 --quantity 6
 
 # Compare all shipping modes
-npx tsx /Users/USER/node scripts/dist/cli.js \
+npx tsx $HOME/node scripts/dist/cli.js \
   compare-rates --origin CNNGB --destination GBSOU --loadtype pallets --weight 2000
 
 # Quick air freight estimate
-npx tsx /Users/USER/node scripts/dist/cli.js \
+npx tsx $HOME/node scripts/dist/cli.js \
   get-estimate --origin CNSHA --destination LHR --loadtype boxes --weight 150 --mode air
 ```
 
